@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title>兴业银行-绿钻</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+<div class="header">
+    <img src="/static/img/lvzuan2.png" alt="">
+    <input id="phone" type="tel" oninput="verification(this);" placeholder="输入手机号码">
+    <a id="button" href="javascript:void(0);"></a>
+</div>
+</body>
+<script>
+    function verification(currentDOM) {
+        var value = currentDOM.value;
+        var buttonDOM = document.getElementById('button');
+        if(/^1[34578]\d{9}$/.test(value)){
+            buttonDOM.style.backgroundColor = '#ffd535';
+        }else{
+            buttonDOM.style.backgroundColor = '#cccccc';
+        }
+    }
+</script>
+</html>

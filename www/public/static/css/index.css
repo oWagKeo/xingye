@@ -1,0 +1,183 @@
+input::input-placeholder { text-align: center }
+input::-ms-input-placeholder{text-align: center;}
+input::-webkit-input-placeholder{text-align: center;}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #f44908;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #f44908;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #f44908;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #f44908;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+}
+.header{
+    position: relative;
+}
+.header img{
+    width: 100%;
+    font-size: 0;
+}
+
+#phone{
+    vertical-align: middle;
+    margin: 0;
+    font-size: 4.5vw;
+    opacity: 1;
+    position: absolute;
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    outline:0;
+    background-color: #fff;
+    border: 0.5vmin solid #000000;
+    bottom: 20%;
+    left: 24%;
+    z-index: 99999;
+    text-align:center;
+    /*content: ' ';*/
+    border-radius: 1.5vmin;
+    width: 53%;
+    height: 9%;
+}
+#button{
+    position: absolute;
+    background: #cccccc url("../img/btn-text2.png") repeat center/cover;
+    border: 0.5vmin solid #000000;
+    bottom: 8%;
+    left: 24%;
+    content: ' ';
+    width: 53%;
+    border-radius: 1.5vmin;
+    height: 9%;
+}
+.input-group {
+    margin-top: 1%;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+.input-group .form-control, .input-group-addon, .input-group-btn {
+    display: table-cell;
+}
+.input-group-addon, .input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.input-group-addon:first-child {
+    border-right: 0;
+}
+input, textarea, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 11px system-ui;
+}
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.input-group .form-control, .input-group-addon, .input-group-btn {
+    display: table-cell;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 1%;
+    text-decoration: none;
+}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
