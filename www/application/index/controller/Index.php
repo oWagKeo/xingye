@@ -25,6 +25,11 @@ class Index extends Controller
             if( $count>=2000 ){
                 return json($this->msg('-1','','礼包被领光啦!'));
             }
+            //查看该手机号是否领取过
+            $info = Db::name('qqyy')->where('phone',input('param.phone'))->find();
+            if( !empty($info) ){
+                return json($this->msg('-1','','您已经领取过了！'));
+            }
             $param = [
                 'phone' => input('param.phone'),
                 'add_time'=>time()
@@ -58,6 +63,11 @@ class Index extends Controller
             $count = Db::name('xhs')->count();
             if( $count>=2000 ){
                 return json($this->msg('-1','','礼包被领光啦!'));
+            }
+            //查看该手机号是否领取过
+            $info = Db::name('xhs')->where('phone',input('param.phone'))->find();
+            if( !empty($info) ){
+                return json($this->msg('-1','','您已经领取过了！'));
             }
             $param = [
                 'phone' => input('param.phone'),
