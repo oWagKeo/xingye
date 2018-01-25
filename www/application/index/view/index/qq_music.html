@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title>兴业银行-绿钻</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+<div class="header">
+    <img src="/static/img/lvzuan2.png" alt="绿钻">
+    <input id="phone" type="tel" oninput="verification(this);" placeholder="输入手机号码">
+    <a id="button" class="disable" href="javascript:void(0);" onclick="login();" ></a>
+</div>
+</body>
+<script src="/static/js/zepto.min.js"></script>
+<script>
+  function verification(currentDOM) {
+    var value = currentDOM.value;
+    var buttonDOM = document.getElementById('button');
+    if(/^1[34578]\d{9}$/.test(value)){
+      $(buttonDOM).removeClass('disable');
+    }else{
+      $(buttonDOM).addClass('disable');
+    }
+  }
+</script>
+<script >
+  function login(){
+    var $btn = $('#button');
+    if($btn.hasClass('disable')){return false;}
+    //TODO::添加logding...
+    //调用ajax记得加lock,防止多次点击
+    $.ajax({
+      url: '/index/index/qq_music',
+      type: 'post',
+      dataType:'json',
+      data:{'phone':$('#phone').val()},
+      success: function (response) {
+        console.log('response',response)
+        //TODO::添加logding end...
+      },
+      error: function () {
+        console.error('出错!');
+        //TODO::添加logding end...
+      }
+    });
+  }
+</script>
+</html>
