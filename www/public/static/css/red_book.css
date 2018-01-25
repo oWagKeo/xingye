@@ -53,7 +53,7 @@ body{
 }
 #button{
     position: absolute;
-    background: #ccc url("../img/btn-text3.png") repeat center/cover;
+    background: #ffd535 url("../img/btn-text3.png") repeat center/cover;
     border: 0.5vmin solid #000000;
     bottom: 8%;
     left: 24%;
@@ -178,6 +178,10 @@ button, input, optgroup, select, textarea {
     border-radius: 4px;
     margin-top: 1%;
     text-decoration: none;
+}
+
+.disable {
+    background-color: #cccccc !important;
 }
 
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
