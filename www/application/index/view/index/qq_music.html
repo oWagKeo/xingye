@@ -42,11 +42,20 @@
       dataType:'json',
       data:{'phone':$('#phone').val()},
       success: function (response) {
-        infoDialog.dialog.update({
-          autoClose : 1500,
-          infoText : '操作成功',
-          infoIcon : '/static/img/success.png'
-        });
+          if( response.code==1 ){
+              infoDialog.dialog.update({
+                  autoClose : 1500,
+                  infoText : response.msg,
+                  infoIcon : '/static/img/success.png'
+              });
+//              location.href = '/index/index/red_book';
+          }else {
+              infoDialog.dialog.update({
+                  autoClose : 1500,
+                  infoText : response.msg,
+                  infoIcon : '/static/img/fail.png'
+              });
+          }
       },
       error: function () {
         infoDialog.dialog.update({
