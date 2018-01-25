@@ -32,17 +32,18 @@
     //TODO::添加logding...
     //调用ajax记得加lock,防止多次点击
       $.ajax({
-        url: '/index/index/qq_music',
-        type: 'post',
-        dataType:'json',
-        success: function (response) {
-          console.log('response',response)
-          //TODO::添加logding end...
-        },
-        error: function () {
-          console.error('出错!');
-          //TODO::添加logding end...
-        }
+          url: '/index/index/qq_music',
+          type: 'post',
+          dataType:'json',
+          data:{'phone':$('#phone').val()},
+          success: function (response) {
+              console.log('response',response)
+              //TODO::添加logding end...
+          },
+          error: function () {
+              console.error('出错!');
+              //TODO::添加logding end...
+          }
       });
   }
 </script>
