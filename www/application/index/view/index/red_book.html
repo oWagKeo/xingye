@@ -38,7 +38,7 @@
     });
     //调用ajax记得加lock,防止多次点击
     $.ajax({
-      url: '/index/index/qq_music',
+      url: '/index/index/red_book',
       type: 'post',
       dataType:'json',
       data:{'phone':$('#phone').val()},
@@ -50,7 +50,7 @@
                   infoText : response.msg,
                   infoIcon : '/static/img/success.png'
               });
-//              location.href = '/index/index/red_book';
+              location.href = response.data;
           }else {
               infoDialog.dialog.update({
                   autoClose : 1500,
