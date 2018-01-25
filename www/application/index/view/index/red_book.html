@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
     <title>兴业银行-小红书</title>
     <link rel="stylesheet" href="/static/css/red_book.css">
+    <link rel="stylesheet" href="/static/css/dialog.css">
 </head>
 <body>
 <div class="header">
@@ -14,6 +15,7 @@
 </div>
 </body>
 <script src="/static/js/zepto.min.js"></script>
+<script src="/static/js/dialog.js"></script>
 <script>
   function verification(currentDOM) {
     var value = currentDOM.value;
@@ -29,7 +31,11 @@
   function login(){
     var $btn = $('#button');
     if($btn.hasClass('disable')){return false;}
-    //TODO::添加logding...
+    var infoDialog = $.dialog({
+      type : 'info',
+      infoText : '加载中…',
+      infoIcon : '/static/img/loading.gif'
+    });
     //调用ajax记得加lock,防止多次点击
     $.ajax({
       url: '/index/index/qq_music',
@@ -38,11 +44,19 @@
       data:{'phone':$('#phone').val()},
       success: function (response) {
         console.log('response',response)
-        //TODO::添加logding end...
+        infoDialog.dialog.update({
+          autoClose : 1500,
+          infoText : '操作成功',
+          infoIcon : '/static/img/success.png'
+        });
       },
       error: function () {
         console.error('出错!');
-        //TODO::添加logding end...
+        infoDialog.dialog.update({
+          autoClose : 1500,
+          infoText : '发生错误!',
+          infoIcon : '/static/img/fail.png'
+        });
       }
     });
   }

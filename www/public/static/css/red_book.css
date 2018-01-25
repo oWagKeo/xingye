@@ -44,7 +44,6 @@ body{
     border: 0.5vmin solid #000000;
     bottom: 20%;
     left: 24%;
-    z-index: 99999;
     text-align:center;
     /*content: ' ';*/
     border-radius: 1.5vmin;
@@ -183,5 +182,10 @@ button, input, optgroup, select, textarea {
 .disable {
     background-color: #cccccc !important;
 }
-
+button{
+    text-align: center!important;
+}
+.dialog-content-bd{
+    text-align: center!important;
+}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
