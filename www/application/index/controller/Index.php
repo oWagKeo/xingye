@@ -13,7 +13,7 @@ class Index extends Controller
     public function qq_music(){
         if( request()->isAjax() ){
             $validate = new Validate();
-            $validate->rule('phone','/^1[34578]\d{9}$/');
+            $validate->rule('phone','require|/^1[34578]\d{9}$/');
             $validate->message('phone','手机号码格式不正确');
             $data = [
                 'phone'=>input('param.phone')
@@ -52,7 +52,7 @@ class Index extends Controller
     public function red_book(){
         if( request()->isAjax() ){
             $validate = new Validate();
-            $validate->rule('phone','/^1[34578]\d{9}$/');
+            $validate->rule('phone','require|/^1[34578]\d{9}$/');
             $validate->message('phone','手机号码格式不正确');
             $data = [
                 'phone'=>input('param.phone')
