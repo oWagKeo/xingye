@@ -44,14 +44,14 @@
       success: function (response) {
           if( response.code==1 ){
               infoDialog.dialog.update({
-                  autoClose : 1500,
+                  autoClose : 2000,
                   infoText : response.msg,
                   infoIcon : '/static/img/success.png'
               });
               location.href = response.data;
           }else {
               infoDialog.dialog.update({
-                  autoClose : 1500,
+                  autoClose : 2000,
                   infoText : response.msg,
                   infoIcon : '/static/img/fail.png'
               });
@@ -59,7 +59,7 @@
       },
       error: function () {
         infoDialog.dialog.update({
-          autoClose : 1500,
+          autoClose : 2000,
           infoText : '发生错误!',
           infoIcon : '/static/img/fail.png'
         });
