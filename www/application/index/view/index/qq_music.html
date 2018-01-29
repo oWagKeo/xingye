@@ -43,12 +43,14 @@
       data:{'phone':$('#phone').val()},
       success: function (response) {
           if( response.code==1 ){
-//              infoDialog.dialog.update({
-//                  autoClose : 2000,
-//                  infoText : response.msg,
-//                  infoIcon : '/static/img/success.png'
-//              });
-              location.href = response.data;
+              infoDialog.dialog.update({
+                  autoClose : 2000,
+                  infoText : response.msg,
+                  infoIcon : '/static/img/success.png',
+                  onClosed : function(){
+                    location.href = response.data;
+                  }
+              });
           }else {
               infoDialog.dialog.update({
                   autoClose : 2000,
